@@ -1,4 +1,12 @@
 class MoviesController < ApplicationController
+  def new
+    render template: "movies/new"
+  end
+
+  def edit
+    render template: "movies/edit"
+  end
+
   def index
     matching_movies = Movie.all
 
