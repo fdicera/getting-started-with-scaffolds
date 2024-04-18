@@ -4,12 +4,7 @@ class MoviesController < ApplicationController
   end
 
   def edit
-    the_id = params.fetch("id")
-
-    matching_movies = Movie.where({ :id => the_id })
-
-    @the_movie = matching_movies[0]
-    
+    @the_movie = Movie.where(id: params.fetch(:id))[0]
     render template: "movies/edit"
   end
 
